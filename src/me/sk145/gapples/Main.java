@@ -50,3 +50,5 @@ public class Main extends JavaPlugin{
         return getConfig().getBoolean(directory);
     }
 }
+
+// test
