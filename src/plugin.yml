@@ -4,6 +4,6 @@ main: me.sk145.gapples.Main
 description: Craft god/notch apples
 commands:
   gapples:
-    usage: /<command> [admin|craft]
-    aliases: [gap]
+    usage: /<command> [craft]
+    aliases: []
     description: Give yourself the items to craft a gapple.

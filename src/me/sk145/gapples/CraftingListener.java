@@ -39,7 +39,7 @@ public class CraftingListener implements Listener{
 
                     if (!p.hasPermission("gapples.craft"))
                     {
-                        if (plugin.checkBoolean("craftPermNeeded")) {
+                        if (plugin.checkBoolean("permissions.craftPermNeeded")) {
                             e.getInventory().setResult(null);
                             if (plugin.checkBoolean("permissions.useDefaultMsg")) {
                                 p.sendMessage(ChatColor.DARK_RED + "You do not have permission to craft that item.");
@@ -49,7 +49,7 @@ public class CraftingListener implements Listener{
                                 p.sendMessage(noCraftPerm("p.getName()"));
                             }
                         }
-                        else if (!plugin.checkBoolean("craftPermNeeded"))
+                        else if (!plugin.checkBoolean("permissions.craftPermNeeded"))
                         {
                             return;
                         }

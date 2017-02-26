@@ -1,25 +1,22 @@
+# --------------------------------------------------
 # Very simple config with very cool features!
 # To select a player use %player% (Messages ONLY!)
 # We also allow color codes! (Messages ONLY!)
-# Don't know where to find them? Click below!
+# Don't know where to find them? Copy the link below!
 # --> http://ess.khhq.net/mc/ <--
 # I hope you guys enjoy my plugin!
 # Stay tuned for more updates!
-# -------------------------------------------
+# --------------------------------------------------
 
 # Turn on and off the recipe to craft gapples.
 globalGappleCrafting: true
 
+# Set 'useDefaultMsg' to false to use 'customMsg'
+# Default message = "You do not have permission to craft that item."
 permissions:
   craftPermNeeded: false
-
-  # Set 'useDefaultMsg' to false to use 'customMsg'
-  # Default message (in red) -> "You do not have permission to craft that item."
   useDefaultMsg: false
   customMsg: '&4You do not have permission to craft that item.'
 
-# Edit the plugin in-game
-adminMode: true
-
-# Allows you to use developer commands.
+# -------------------
 developerMode: false

@@ -1,5 +1,6 @@
 package me.sk145.gapples;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,37 +22,28 @@ public class Commands implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        Player p = (Player) sender;
-
         if (label.equalsIgnoreCase("gapples")) {
-            if (!(p instanceof Player)) {
-                sender.sendMessage("Gapples - By sk145");
+            if (!(sender instanceof Player)) {
+                sender.sendMessage("Gapples - by sk145 \n 'Gapples' commands cannot be used in console.");
                 return true;
             }
+
+            Player p = (Player) sender;
+
             if (args.length == 0) {
-                p.sendMessage("Gapples - By sk145");
-                p.sendMessage("/gapples admin");
+                p.sendMessage(ChatColor.GOLD + "Gapples - by sk145");
                 p.sendMessage("/gapples craft");
                 return true;
             } else {
+
                 if (args[0].equalsIgnoreCase("craft")) {
                     if (plugin.checkBoolean("developerMode")) {
                         p.getInventory().addItem(new ItemStack(Material.GOLD_BLOCK, 8));
                         p.getInventory().addItem(new ItemStack(Material.APPLE));
-                        p.getInventory().addItem(new ItemStack(Material.WORKBENCH, 1));
                         p.openWorkbench(p.getLocation(), true);
                         return true;
                     } else {
-                        p.sendMessage("Developer mode is not enabled!");
-                        return true;
-                    }
-                }
-                if (args[0].equalsIgnoreCase("admin")) {
-                    if (plugin.checkBoolean("adminMode")) {
-                        plugin.menu.show(p);
-                        return true;
-                    } else {
-                        p.sendMessage("Admin mode is not enabled!");
+                        p.sendMessage(ChatColor.RED + "Developer mode is not enabled!");
                         return true;
                     }
                 }
